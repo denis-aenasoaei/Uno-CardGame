@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\values-v28_values-v28.arsc.flat",
+            "outputFile": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\values-v28_values-v28.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\src\\main\\res\\values-v28\\styles.xml",
+                    "source": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\src\\main\\res\\values-v28\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "2",
@@ -25,10 +25,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\values-v21_values-v21.arsc.flat",
+            "outputFile": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\values-v21_values-v21.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\src\\main\\res\\values-v21\\styles.xml",
+                    "source": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\src\\main\\res\\values-v21\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "0",
@@ -49,27 +49,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\values_values.arsc.flat",
+            "outputFile": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\build\\intermediates\\res\\merged\\release\\values_values.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\src\\main\\res\\values\\ids.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "46",
-                        "endOffsets": "97"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "45",
-                        "endOffsets": "96"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "5,2,7",
                         "startColumns": "0,0,0",
@@ -88,7 +71,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\denis\\Desktop\\a\\Unity-Uno-Game\\Temp\\gradleOut\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "2,2",
@@ -102,6 +85,23 @@
                         "startOffsets": "101,143",
                         "endColumns": "41,67",
                         "endOffsets": "138,206"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\denis\\Desktop\\a\\Uno-Cardgame-AR\\Temp\\gradleOut\\src\\main\\res\\values\\ids.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "46",
+                        "endOffsets": "97"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "45",
+                        "endOffsets": "96"
                     }
                 }
             ]
