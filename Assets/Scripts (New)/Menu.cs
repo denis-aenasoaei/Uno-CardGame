@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour {
 	public GameObject setupCan;
 	public GameObject[] toggles = new GameObject[5];
 
-	void Start () { //start function
+	void Start () { 
 		vers.text = "Version: " + Application.version;
 
 		foreach (GameObject x in cards) { //sets a random color and number for the cards
@@ -60,7 +60,7 @@ public class Menu : MonoBehaviour {
 			pos -= 300;
 		}
 	}
-	string returnRandColor (int rand) { //gives a random color
+	string returnRandColor (int rand) { 
 		switch(rand) {
 		case 0: 
 			return "Green";
@@ -86,22 +86,22 @@ public class Menu : MonoBehaviour {
 		}
 		return new Color (0, 0, 0);
 	}
-	public void exit() { //exits the app
+	public void exit() { 
 		Application.Quit ();
 	}
-	public void setup(bool openClose) { //starts the setup canvas screen
+	public void setup(bool openClose) { 
 		setupCan.SetActive (openClose);			
 	}
-	public void play() { //finds the toggle that is on to decide how many ai players there will be
+	public void play() { // gaseste checkbox-ul pus pentru a decide cati AI players vor fi
 		for (int i = 0; i < 5; i++) {
 			if (toggles [i].GetComponent<Toggle> ().isOn) {
 				Control.numbOfAI = i + 1;
 				break;
 			}				
 		}
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("Main"); //then it loads the play screen
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("Main"); // dupa care incarca scena principala
 	}
-	void Update() { //this takes care of moving all of the cards in the scroll. It resets them back to the top as well
+	void Update() { // animatii pentru carti in ecranul de meniu
 		for(int i=0;i<6;i++) {
 			float curPos = scroll2[i].transform.localPosition.y;
 			if (curPos < (Screen.height-300)*-1) {

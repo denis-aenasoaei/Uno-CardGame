@@ -7,12 +7,12 @@ using System.Linq;
 public class Card : MonoBehaviour {
 
 	/*
-	* 1-9 are regular
-	* 10 is skip
-	* 11 is reverse
-	* 12 is draw 2
-	* 13 is wild
-	* 14 is wild draw 4
+	* 1-9 sunt normale
+	* 10 este skip
+	* 11 este reverse
+	* 12 este trage 2
+	* 13 este wild
+	* 14 este wild draw 4
 	*/
 
 	int number;
@@ -44,7 +44,7 @@ public class Card : MonoBehaviour {
 			temp.transform.GetChild (1).GetComponent<RawImage> ().color = returnColor (color);
 		}
 		else if (number == 13) {
-			temp.transform.GetChild (0).GetComponent<Text> ().text = "";
+			temp.transform.GetChild (0).GetComponent<Text> ().text = ""; 
 			temp.transform.GetChild (2).GetComponent<Text> ().text = "";
 		}
 
@@ -66,16 +66,16 @@ public class Card : MonoBehaviour {
 		}
 		return new Color (0, 0, 0);
 	}
-	public int getNumb() { //accessor for getting the number
+	public int getNumb() { 
 		return number;
 	}
-	public string getColor() { //accessor for getting the color
+	public string getColor() { 
 		return color;
 	}
-	public bool Equals(Card other) { //overides the original Equals so that color or number must be equal
+	public bool Equals(Card other) { // cartile sunt considerate egale (compatibile) daca au acelasi numar sau aceiasi culoare
 		return other.getNumb () == number || other.getColor ().Equals (color);
 	}
-	public void changeColor(string newColor) { //mutator that changes the color of a wild card to make the color noticable
+	public void changeColor(string newColor) { // folosit pentru a schimba culoarea wild card-urilor
 		color = newColor;
 	}
 }

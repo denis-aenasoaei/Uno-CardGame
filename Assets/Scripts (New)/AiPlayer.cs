@@ -35,9 +35,9 @@ public class AiPlayer : MonoBehaviour, PlayerInterface {
 
 		handList = handList.OrderBy (e => e.getColor()).ThenBy(e => e.getNumb ()).ToList();
 		
-		int count = handList.Count (e => e.getColor () == colorDisc); //does counts of how many cards it has, either color, number, or wild
+		int count = handList.Count (e => e.getColor () == colorDisc); 
 		int count2 = handList.Count (e => e.getNumb () == numbDisc);
-		int count3 = handList.Count (e => e.getNumb () == 13 || e.getNumb () == 14);
+		int count3 = handList.Count (e => e.getNumb () >= 13);
 
 		if (count > 0) 
 			locationCardPlayed = handList.FindLastIndex (e => e.getColor () == colorDisc);
@@ -83,10 +83,10 @@ public class AiPlayer : MonoBehaviour, PlayerInterface {
 			turnEnd ();
 	}
 
-	public void addCards(Card other) { //recieves cards to the hand
+	public void addCards(Card other) { 
 		handList.Add (other);
 	}
-	public void turnEnd() { //ends the turn
+	public void turnEnd() { 
 		Control cont = GameObject.Find ("Control").GetComponent<Control> ();
 		if (drew) {
 			cont.recieveText (string.Format ("{0} drew", name));
@@ -98,7 +98,6 @@ public class AiPlayer : MonoBehaviour, PlayerInterface {
 			if (specNumb < 10) {
 				cont.recieveText (string.Format ("{0} played a {1} {2}", name, handList [locationCardPlayed].getColor (), handList [locationCardPlayed].getNumb ()));
 				cont.enabled = true;
-				//cont.updateCardsLeft ();
 			}
 			else if (specNumb == 10) {
 				cont.specialCardPlay (this, 10);
@@ -127,13 +126,13 @@ public class AiPlayer : MonoBehaviour, PlayerInterface {
 		cont.updateDiscPile(handList[locationCardPlayed]);
 		handList.RemoveAt (locationCardPlayed);
 	}
-	public bool Equals(PlayerInterface other) { //equals
+	public bool Equals(PlayerInterface other) { 
 		return other.getName ().Equals (name);
 	}
-	public string getName() { //returns the name
+	public string getName() { 
 		return name;
 	}
-	public int getCardsLeft() { //returns cards left
+	public int getCardsLeft() {
 		return handList.Count;
 	}
 }

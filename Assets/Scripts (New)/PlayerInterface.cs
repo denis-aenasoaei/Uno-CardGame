@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface PlayerInterface { //the interface the is inherited by the player objs
+public interface PlayerInterface { 
 	void turn();
 	bool skipStatus {
 		get;

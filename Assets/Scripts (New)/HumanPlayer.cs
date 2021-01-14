@@ -11,61 +11,61 @@ public class HumanPlayer : MonoBehaviour, PlayerInterface {
 	string name;
 	List<Card> handList = new List<Card> ();
 
-	public HumanPlayer(string name) { //initalizes
+	public HumanPlayer(string name) {
 		this.name = name;
 	}
 
-	public bool skipStatus { //returns if the player should be skipped
+	public bool skipStatus { // returneaza daca trebuie sa dai skip peste player
 		get{return skip; }
 		set{ skip = value; }
 	}
 
-	public void turn() { //does the turn
+	public void turn() { // face o miscare
 		playedWild = false;
 		drew = false;
 		int i = 0;
-		foreach (Card x in handList) { //foreach card in hand
+		foreach (Card x in handList) { // pentru fiecare carte din mana
 			
 			GameObject temp = null;
-			if (GameObject.Find ("Control").GetComponent<Control> ().playerHand.transform.childCount > i) //is the card already there or does it need to be loaded
+			if (GameObject.Find ("Control").GetComponent<Control> ().playerHand.transform.childCount > i) // este cartea pe ecran? daca nu, incarc-o
 				temp = GameObject.Find ("Control").GetComponent<Control> ().playerHand.transform.GetChild (i).gameObject;			
 			else 
 				temp = x.loadCard (GameObject.Find ("Control").GetComponent<Control> ().playerHand.transform);
 
 			
-			if (handList [i].Equals (Control.discard [Control.discard.Count - 1]) || handList [i].getNumb () >= 13) { //if the cards can be played
+			if (handList [i].Equals (Control.discard [Control.discard.Count - 1]) || handList [i].getNumb () >= 13) { // daca poti juca pune cartea jos, activeaz-o
 				setListeners (i, temp);
 			}
 			else {
-				temp.transform.GetChild (3).gameObject.SetActive (true); //otherwise black them out
+				temp.transform.GetChild (3).gameObject.SetActive (true); // daca nu, este mai intunecata
 			}
 			i++;
 		}
 	}
 
-	public void setListeners(int where,GameObject temp) { //sets all listeners on the cards
+	public void setListeners(int cardIndex,GameObject temp) { // seteaza evenimentul pentru click pe carte
         temp.GetComponent<Button> ().onClick.AddListener (() => {
 
-            playedWild = handList[where].getNumb()>=13;
+            playedWild = handList[cardIndex].getNumb()>=13;
 
 			temp.GetComponent<Button>().onClick.RemoveAllListeners();
 			Destroy (temp);
-			turnEnd(where);
+			turnEnd(cardIndex);
 		});
         
         
 	}
 
-	public void addCards(Card other) { //recieves cards to add to the hand
+	public void addCards(Card other) { // adauga o carte in mana jucatorului
 		handList.Add (other);
 	}
 
-	public void recieveDrawOnTurn() { //if the player decides to draw
+	public void recieveDrawOnTurn() { // cand jucatorul decide sa traga o carte
 		handList[handList.Count-1].loadCard (GameObject.Find ("Control").GetComponent<Control> ().playerHand.transform);
 		drew = true;
 		turnEnd (-1);
 	}
-	public void turnEnd(int where) { //ends the player's turn
+	public void turnEnd(int where) { 
 		Control cont = GameObject.Find("Control").GetComponent<Control>();
 
 		cont.playerHand.GetComponent<RectTransform> ().localPosition = new Vector2 (0, 0);
@@ -111,13 +111,13 @@ public class HumanPlayer : MonoBehaviour, PlayerInterface {
 		}
 			
 	}
-	public bool Equals(PlayerInterface other) { //equals function based on name
+	public bool Equals(PlayerInterface other) { 
 		return other.getName ().Equals (name);
 	}
-	public string getName() { //returns the name
+	public string getName() { 
 		return name;
 	}
-	public int getCardsLeft() { //gets how many cards are left in the hand
+	public int getCardsLeft() { 
 		return handList.Count;
 	}
 }
